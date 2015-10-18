@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('stocksApp.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout) {
 
@@ -8,6 +8,15 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+  $scope.playlists = [
+    { title: 'Metal', id: 1 },
+    { title: 'Chill', id: 2 },
+    { title: 'Dubstep', id: 3 },
+    { title: 'Indie', id: 4 },
+    { title: 'Rap', id: 5 },
+    { title: 'Cowbell', id: 6 }
+  ];
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -41,16 +50,21 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+.controller('MyStocksCtrl', [$scope, function($scope) {
+  $scope.myStocksArray = [
+    { ticker: "" },
+    { ticker: "" },
+    { ticker: "" },
+    { ticker: "" },
+    { ticker: "" },
+    { ticker: "" },
+    { ticker: "" },
+    { ticker: "" }
   ];
-})
+}])
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('StockCtrl', function($scope, $stateParams) {
+
+console.log($stateParams.playlistId);
+
 });
