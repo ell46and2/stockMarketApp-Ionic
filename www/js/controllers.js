@@ -50,21 +50,15 @@ angular.module('stocksApp.controllers', [])
   };
 })
 
-.controller('MyStocksCtrl', [$scope, function($scope) {
+.controller('MyStocksCtrl', ['$scope', function($scope) {
   $scope.myStocksArray = [
-    { ticker: "" },
-    { ticker: "" },
-    { ticker: "" },
-    { ticker: "" },
-    { ticker: "" },
-    { ticker: "" },
-    { ticker: "" },
-    { ticker: "" }
+    { ticker: "AB" },
+    { ticker: "CD" }
   ];
 }])
 
 .controller('StockCtrl', function($scope, $stateParams) {
 
-console.log($stateParams.playlistId);
+  $scope.ticker = $stateParams.stockTicker;
 
 });
